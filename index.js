@@ -30,6 +30,10 @@ app.use('/api/orders', orderRoutes);
 app.use('/api/auth', userRoutes);
 app.use('/api/admin', adminRoutes);
 
+app.get('/', (req, res) => {
+   res.send('Book App API is up and running!');
+});
+
 async function main() {
    await mongoose.connect(process.env.DB_URL);
    app.use('/', (req, res) => {
